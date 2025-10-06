@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - PixelVerse Studios</title>
+    <link rel="stylesheet" href="../asset/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Inclure le même HEADER que sur index.html -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../asset/image/Pixelverse.jpg" alt="PixelVerse Studios Logo">
+                    </a>
+                </div>
+                <ul>
+                    <li><a href="index.html#home">Accueil</a></li>
+                    <li><a href="characters.html">Personnages</a></li>
+                    <li><a href="character-creator.html">Créateur</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="user-page.html">Profil</a></li>
+                    <li id="auth-link">
+                        <a href="login.html"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================== -->
+    <!-- CONTENU PRINCIPAL : PAGE DE CONTACT -->
+    <!-- ============================================== -->
+    <main class="content-section bg-light-gray">
+        <div class="container">
+            <h1 class="section-title">Nous Contacter</h1>
+
+            <div class="contact-info">
+                <p>Nous sommes là pour répondre à toutes vos questions et recueillir vos suggestions. N'hésitez pas à utiliser le formulaire ci-dessous ou à nous contacter directement.</p>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> Email : <a href="mailto:contact@pixelversestudios.com">contact@pixelversestudios.com</a></li>
+                    <li><i class="fas fa-phone-alt"></i> Téléphone : +33 1 23 45 67 89</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Adresse : 123 Rue de la Création, 75000 Paris, France</li>
+                </ul>
+            </div>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="email">Votre Email :</label>
+                    <input type="email" id="email" name="email" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="pseudo">Votre Pseudo :</label>
+                    <input type="text" id="pseudo" name="pseudo" required autocomplete="username">
+                    <small id="pseudo-feedback" class="feedback-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Sujet de votre demande :</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Détail de votre demande :</label>
+                    <textarea id="message" name="message" rows="8" required></textarea>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent">J'accepte que mes données soient utilisées pour traiter ma demande conformément à la <a href="cgv.html" target="_blank">Politique de Confidentialité</a>.</label>
+                    <!-- RGAA: le lien s'ouvre dans une nouvelle fenêtre pour ne pas perturber le formulaire -->
+                </div>
+                <button type="submit" class="btn primary-btn">Envoyer la demande</button>
+            </form>
+            <div id="form-message" class="feedback-message success"></div>
+        </div>
+    </main>
+
+    <!-- Inclure le même FOOTER que sur index.html -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PixelVerse Studios. Tous droits réservés.</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="mentions-legales.html">Mentions Légales</a></li>
+                    <li><a href="cgv.html">Conditions Générales de Vente</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../javascript/script.js"></script>
+    <script src="../javascript/contact.js"></script> <!-- Script spécifique à la page contact -->
+</body>
+</html>

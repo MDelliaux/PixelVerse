@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un compte - PixelVerse Studios</title>
+    <link rel="stylesheet" href="../asset/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Inclure le même HEADER que sur index.html -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="https://via.placeholder.com/150x50?text=PixelVerse+Logo" alt="PixelVerse Studios Logo">
+                    </a>
+                </div>
+                <ul>
+                    <li><a href="index.html#home">Accueil</a></li>
+                    <li><a href="characters.html">Personnages</a></li>
+                    <li><a href="character-creator.html">Créateur</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="user-page.html">Profil</a></li>
+                    <li id="auth-link">
+                        <a href="login.html"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================== -->
+    <!-- CONTENU PRINCIPAL : FORMULAIRE DE CRÉATION DE COMPTE -->
+    <!-- ============================================== -->
+    <main class="content-section auth-page bg-light-gray">
+        <div class="container">
+            <h1 class="section-title">Créez votre compte</h1>
+
+            <div class="auth-form-container">
+                <form id="signupForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="signup-email">Email :</label>
+                        <input type="email" id="signup-email" name="email" required autocomplete="email" placeholder="Votre adresse email">
+                        <small id="email-feedback" class="feedback-message"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-pseudo">Pseudo :</label>
+                        <input type="text" id="signup-pseudo" name="pseudo" required autocomplete="username" placeholder="Votre pseudo unique">
+                        <small id="pseudo-signup-feedback" class="feedback-message"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Mot de passe :</label>
+                        <input type="password" id="signup-password" name="password" required autocomplete="new-password" placeholder="Mot de passe">
+                        <small id="password-feedback" class="feedback-message"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm-password">Confirmer le mot de passe :</label>
+                        <input type="password" id="signup-confirm-password" name="confirm_password" required autocomplete="new-password" placeholder="Confirmez votre mot de passe">
+                        <small id="confirm-password-feedback" class="feedback-message"></small>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="signup-consent" name="consent" required>
+                        <label for="signup-consent">J'accepte les <a href="cgv.html" target="_blank">Conditions Générales de Vente</a> et la <a href="mentions-legales.html" target="_blank">Politique de Confidentialité</a>.</label>
+                    </div>
+
+                    <button type="submit" class="btn primary-btn full-width-btn">S'inscrire</button>
+                    <div id="signup-message" class="feedback-message"></div>
+
+                    <div class="auth-links">
+                        <a href="login.html">Déjà un compte ? Connectez-vous !</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Inclure le même FOOTER que sur index.html -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 PixelVerse Studios. Tous droits réservés.</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="mentions-legales.html">Mentions Légales</a></li>
+                    <li><a href="cgv.html">Conditions Générales de Vente</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../javascript/script.js"></script>
+    <script src="../javascript/auth.js"></script>
+</body>
+</html>

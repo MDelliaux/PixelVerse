@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Personnages - PixelVerse Studios</title>
+    <link rel="stylesheet" href="../asset/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- ============================================== -->
+    <!-- HEADER ET NAVIGATION - MENU DE L'APPLICATION -->
+    <!-- ============================================== -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../asset/image/Pixelverse.jpg" alt="PixelVerse Studios Logo">
+                    </a>
+                </div>
+                <ul>
+                    <li><a href="index.html#home">Accueil</a></li>
+                    <li><a href="characters.html">Personnages</a></li>
+                    <li><a href="character-creator.html">Créateur</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="user-page.html">Profil</a></li>
+                    <li id="auth-link">
+                        <a href="login.html"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECTION HERO (pour la page Personnages, peut être plus simple) -->
+        <section id="characters-hero" class="hero-section small-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Découvrez les Héros de FantasyRealm Online</h1>
+                    <p>Explorez les histoires et les capacités de nos personnages emblématiques.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION : LISTE DES PERSONNAGES -->
+        <section id="character-list" class="content-section bg-light-gray">
+            <div class="container">
+                <h2 class="section-title">Nos Personnages</h2>
+                <div class="characters-grid">
+                    
+                    <div class="character-card">
+                        <img src="../asset/image/arthur.jpg" alt="Paladin Arthur">
+                        <h3>Arthur, le Paladin Gardien</h3>
+                        <p>Un chevalier noble et vertueux, maniant l'épée de la justice et le bouclier de la foi. Il protège les innocents et combat les forces du mal avec une détermination sans faille.</p>
+                        <button class="btn secondary-btn small-btn view-details-btn"
+                                data-name="Arthur, le Paladin Gardien"
+                                data-image="../asset/image/arthur.jpg"
+                                data-description="Arthur est un chevalier noble et vertueux, maniant l'épée de la justice et le bouclier de la foi. Il protège les innocents et combat les forces du mal avec une détermination sans faille, guidé par son code d'honneur."
+                                data-class="Paladin"
+                                data-weapon="Épée Longue & Bouclier"
+                                data-specialty="Tanking, Soins légers, Buffs">
+                            Voir Profil
+                        </button>
+                    </div>
+
+                      <div class="character-card">
+                        <img src="../asset/image/Lyra.jpg" alt="Elfe Mage Lyra">
+                        <h3>Lyra, l'Archimage Sylvestre</h3>
+                        <p>Issue des forêts anciennes, Lyra est une mage élancée, maîtresse des arcanes élémentaires. Ses sorts peuvent consumer ses ennemis ou soigner ses alliés.</p>
+                        <button class="btn secondary-btn small-btn view-details-btn"
+                                data-name="Lyra, l'Archimage Sylvestre"
+                                data-image="../asset/image/Lyra.jpg"
+                                data-description="Issue des forêts anciennes, Lyra est une mage élancée, maîtresse des arcanes élémentaires. Ses sorts peuvent consumer ses ennemis ou soigner ses alliés, elle est une force de la nature à elle seule."
+                                data-class="Mage"
+                                data-weapon="Bâton runique"
+                                data-specialty="Dégâts magiques, Contrôle de foule">
+                            Voir Profil
+                        </button>
+                    </div>
+                    <div class="character-card">
+                        <img src="../asset/image/kael.jpg" alt="Assassin Kael">
+                        <h3>Kael, l'Ombre Silencieuse</h3>
+                        <p>Un assassin mystérieux et agile, spécialisé dans les frappes rapides et mortelles depuis l'ombre. On raconte qu'il est capable de disparaître sans laisser de trace.</p>
+                        <button class="btn secondary-btn small-btn view-details-btn"
+                                data-name="Kael, l'Ombre Silencieuse"
+                                data-image="../asset/image/kael.jpg"
+                                data-description="Kael est un assassin mystérieux et agile, spécialisé dans les frappes rapides et mortelles depuis l'ombre. Maître de la furtivité et du poison, il est capable de neutraliser ses cibles sans être détecté, ne laissant derrière lui qu'un murmure dans le vent."
+                                data-class="Assassin"
+                                data-weapon="Dagues jumelles"
+                                data-specialty="Furtivité, Dégâts monocible, Poison">
+                            Voir Profil
+                        </button>
+                    </div>
+
+                    <!-- Ajoutez d'autres character-card ici pour chaque personnage -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION : PERSONNAGE EN VEDETTE -->
+        <section id="featured-character" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Personnage du Mois : Elara la Chasseuse</h2>
+                <div class="content-grid reverse-grid">
+                    <div class="text-content">
+                        <h3>Elara, Chasseuse des Landes Sauvages</h3>
+                        <p>Élevée dans la nature, Elara est une archère inégalée et une pisteuse hors pair. Son compagnon loup, Fenris, est toujours à ses côtés. Ensemble, ils traquent les bêtes les plus féroces et protègent les frontières du royaume.</p>
+                        <ul>
+                            <li>Classe : Chasseur</li>
+                            <li>Arme principale : Arc Long</li>
+                            <li>Spécialité : Dégâts à distance, survie</li>
+                        </ul>
+                        <a href="#" class="btn primary-btn">Découvrir son histoire</a>
+                    </div>
+                    <div class="image-content">
+                        <img src="../asset/image/Elarra.jpg" alt="Elara la Chasseuse">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- MODALE DE DÉTAILS DU PERSONNAGE -->
+    <div id="characterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-body">
+                <img id="modal-character-image" src="" alt="Image du personnage">
+                <h2 id="modal-character-name"></h2>
+                <p id="modal-character-description"></p>
+                <div class="modal-details">
+                    <p><strong>Classe :</strong> <span id="modal-character-class"></span></p>
+                    <p><strong>Arme :</strong> <span id="modal-character-weapon"></span></p>
+                    <p><strong>Spécialité :</strong> <span id="modal-character-specialty"></span></p>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </main>
+
+    <!-- ============================================== -->
+    <!-- FOOTER -->
+    <!-- ============================================== -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PixelVerse Studios. Tous droits réservés.</p>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="mentions-legales.html">Mentions Légales</a></li>
+                    <li><a href="cgv.html">Conditions Générales de Vente</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../javascript/script.js"></script>
+    <script src="../javascript/characters.js"></script> 
+</body>
+</html>
