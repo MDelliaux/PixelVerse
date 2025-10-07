@@ -97,36 +97,46 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.getElementById('login-email').value;
             const password = document.getElementById('login-password').value;
 
-            // En production: Envoyer les identifiants au back-end
-            // const response = await fetch('/api/login', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify({ email, password })
-            // });
-            // const data = await response.json();
+            try {
+                // Étape 1: Envoyer les identifiants au script PHP
+                const response = await fetch('/PixelVerse/api/login.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
 
-            // Simulation de la connexion
-            const simulationSuccess = (email === 'test@example.com' && password === 'Password123!'); // Pseudo user
-            const simulationAdminSuccess = (email === 'admin@pixelverse.com' && password === 'AdminPass!'); // Pseudo admin
+                // Étape 2: Attendre la réponse du serveur et la convertir en JSON
+                const result = await response.json();
 
-            if (simulationSuccess || simulationAdminSuccess) {
-                // Stocker l'état de connexion et le pseudo/email (simulation)
-                localStorage.setItem('isLoggedIn', 'true');
-                localStorage.setItem('userEmail', email);
-                localStorage.setItem('userPseudo', simulationAdminSuccess ? 'Admin' : 'TestUser'); // Simulation du pseudo
-                localStorage.setItem('userRole', simulationAdminSuccess ? 'admin' : 'player'); // Simulation du rôle
+                // Étape 3: Gérer la réponse
+                if (response.ok) { // Le statut HTTP est 2xx (succès)
+                    // Stocker les informations de l'utilisateur dans le localStorage
+                    // C'est utile pour le JavaScript côté client (ex: afficher le pseudo)
+                    localStorage.setItem('isLoggedIn', 'true');
+                    localStorage.setItem('userPseudo', result.user.pseudo);
+                    localStorage.setItem('userRole', result.user.role);
 
-                showFeedback(loginMessage, 'Connexion réussie ! Redirection...', 'success');
-                // Rediriger vers la page appropriée en fonction du rôle
-                setTimeout(() => {
-                    if (simulationAdminSuccess) {
-                        window.location.href = './admin.html'; // Redirection vers la page admin
-                    } else {
-                        window.location.href = './user-page.html'; // Redirection vers la page utilisateur
-                    }
-                }, 1500);
-            } else {
-                showFeedback(loginMessage, 'Email ou mot de passe incorrect.');
+                    showFeedback(loginMessage, result.message, 'success');
+
+                    // Rediriger vers la page appropriée en fonction du rôle
+                    setTimeout(() => {
+                        if (result.user.role === 'admin') {
+                            window.location.href = './admin.html';
+                        } else {
+                            window.location.href = './user-page.html';
+                        }
+                    }, 1500);
+
+                } else { // Le statut HTTP indique une erreur (4xx ou 5xx)
+                    showFeedback(loginMessage, result.message || 'Une erreur est survenue.', 'error');
+                }
+
+            } catch (error) {
+                // Gérer les erreurs réseau (ex: serveur PHP non démarré, chemin incorrect)
+                console.error('Erreur de connexion au serveur:', error);
+                showFeedback(loginMessage, 'Impossible de contacter le serveur. Vérifiez votre connexion ou que le serveur est bien démarré.', 'error');
             }
         });
     }
