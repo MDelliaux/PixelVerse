@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialise l'état de connexion au chargement de la page
     checkLoginStatus();
+    updateAdminLinkVisibility();
 
     // Pour simuler la connexion (à utiliser dans la console du navigateur)
     // localStorage.setItem('isLoggedIn', 'true');
@@ -52,3 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // location.reload();
 
 });
+
+function updateAdminLinkVisibility() {
+    const userRole = localStorage.getItem('userRole');
+    const adminLink = document.getElementById('admin-link');
+
+    if (adminLink) {
+        if (userRole === 'admin') {
+            adminLink.style.display = 'list-item';
+        } else {
+            adminLink.style.display = 'none';
+        }
+    }
+}

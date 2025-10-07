@@ -774,7 +774,7 @@ footer .container {
 
 .character-card img {
     max-width:  100%;
-    max-height: auto;
+    
     object-fit: cover; /* Recadre l'image pour couvrir la zone */
     border-bottom: 3px solid var(--accent-color);
 }

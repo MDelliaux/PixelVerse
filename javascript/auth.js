@@ -117,10 +117,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('userRole', simulationAdminSuccess ? 'admin' : 'player'); // Simulation du rôle
 
                 showFeedback(loginMessage, 'Connexion réussie ! Redirection...', 'success');
-                // Rediriger vers l'espace utilisateur ou la page d'accueil après un court délai
+                // Rediriger vers la page appropriée en fonction du rôle
                 setTimeout(() => {
-                
-                    window.location.href = './user-page.html'; 
+                    if (simulationAdminSuccess) {
+                        window.location.href = './admin.html'; // Redirection vers la page admin
+                    } else {
+                        window.location.href = './user-page.html'; // Redirection vers la page utilisateur
+                    }
                 }, 1500);
             } else {
                 showFeedback(loginMessage, 'Email ou mot de passe incorrect.');
