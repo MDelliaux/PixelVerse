@@ -67,4 +67,4 @@ try {
         'message' => 'Erreur serveur lors de la tentative de connexion: ' . $e->getMessage()
     ]);
 }
-?>
+

@@ -33,4 +33,4 @@ try {
     ]);
     exit(); // Arrêter l'exécution du script
 }
-?>
+
