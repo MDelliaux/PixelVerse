@@ -33,7 +33,7 @@ try {
 
     // 2. Vérifier si l'utilisateur existe ET si le mot de passe est correct
     // password_verify() compare le mot de passe fourni avec le hash stocké dans la base de données.
-    if ($user && password_verify($password, $user['password_hash'])) {
+    if ($user && password_verify($password, $user)) {
         // Le mot de passe est correct !
 
         // 3. Stocker les informations de l'utilisateur dans la session PHP
